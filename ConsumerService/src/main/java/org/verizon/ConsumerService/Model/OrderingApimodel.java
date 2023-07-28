@@ -2,31 +2,39 @@ package org.verizon.ConsumerService.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+@Entity
 public class OrderingApimodel {
-	@Entity
-	public class OderingApimodel {
-		@Id
-		private String orderid;	
-		private int planid;
+	
+	@Id
+	private String orderid;	
+	
+	
+	@ManyToOne
+	@JoinColumn(name="planid")
+	private Catalogmodel catalogmodel;
+		
+		public OrderingApimodel() {
+			super();
+		}
+
 		public String getOrderid() {
 			return orderid;
 		}
+
 		public void setOrderid(String orderid) {
 			this.orderid = orderid;
 		}
-		public int getPlanid() {
-			return planid;
+
+		public Catalogmodel getCatalogmodel() {
+			return catalogmodel;
 		}
-		public void setPlanid(int planid) {
-			this.planid = planid;
+
+		public void setCatalogmodel(Catalogmodel catalogmodel) {
+			this.catalogmodel = catalogmodel;
 		}
-		public OderingApimodel() {
-			super();
-			// TODO Auto-generated constructor stub
-		}
+		
 		
 	
 	}
-
-}

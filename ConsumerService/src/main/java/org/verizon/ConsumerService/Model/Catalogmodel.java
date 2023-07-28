@@ -1,6 +1,8 @@
 package org.verizon.ConsumerService.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -10,13 +12,12 @@ public class Catalogmodel {
 	
 private int planid;
 private String plan;
-
 private int price;
 private String duration;
 
 
 public Catalogmodel() {
-	super();
+	
 }
 public String getPlan() {
 	return plan;
